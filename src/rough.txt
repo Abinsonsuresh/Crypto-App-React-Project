@@ -30,3 +30,134 @@
         29107.671411490628,
         29068.72166655228,
         29166.28864445906,
+
+
+Trending Coins
+
+
+{
+  "coins": [
+    {
+      "item": {
+        "id": "matic-network",
+        "coin_id": 4713,
+        "name": "Polygon",
+        "symbol": "MATIC",
+        "market_cap_rank": 12,
+        "thumb": "https://assets.coingecko.com/coins/images/4713/thumb/matic-token-icon.png?1624446912",
+        "small": "https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png?1624446912",
+        "large": "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912",
+        "slug": "polygon",
+        "price_btc": 2.309572677283475e-05,
+        "score": 0
+      }
+    },
+    {
+      "item": {
+        "id": "rollbit-coin",
+        "coin_id": 24552,
+        "name": "Rollbit Coin",
+        "symbol": "RLB",
+        "market_cap_rank": 67,
+        "thumb": "https://assets.coingecko.com/coins/images/24552/thumb/unziL6wO_400x400.jpg?1648134494",
+        "small": "https://assets.coingecko.com/coins/images/24552/small/unziL6wO_400x400.jpg?1648134494",
+        "large": "https://assets.coingecko.com/coins/images/24552/large/unziL6wO_400x400.jpg?1648134494",
+        "slug": "rollbit-coin",
+        "price_btc": 6.643741267619788e-06,
+        "score": 1
+      }
+    },
+    {
+      "item": {
+        "id": "ceek",
+        "coin_id": 2581,
+        "name": "CEEK Smart VR",
+        "symbol": "CEEK",
+        "market_cap_rank": 458,
+        "thumb": "https://assets.coingecko.com/coins/images/2581/thumb/ceek-smart-vr-token-logo.png?1547036714",
+        "small": "https://assets.coingecko.com/coins/images/2581/small/ceek-smart-vr-token-logo.png?1547036714",
+        "large": "https://assets.coingecko.com/coins/images/2581/large/ceek-smart-vr-token-logo.png?1547036714",
+        "slug": "ceek-smart-vr-token",
+        "price_btc": 1.6713690119906973e-06,
+        "score": 2
+      }
+    },
+    {
+      "item": {
+        "id": "unibot",
+        "coin_id": 30462,
+        "name": "Unibot",
+        "symbol": "UNIBOT",
+        "market_cap_rank": 166,
+        "thumb": "https://assets.coingecko.com/coins/images/30462/thumb/logonoline_%281%29.png?1687510315",
+        "small": "https://assets.coingecko.com/coins/images/30462/small/logonoline_%281%29.png?1687510315",
+        "large": "https://assets.coingecko.com/coins/images/30462/large/logonoline_%281%29.png?1687510315",
+        "slug": "unibot",
+        "price_btc": 0.006733149302143985,
+        "score": 3
+      }
+    },
+    {
+      "item": {
+        "id": "akash-network",
+        "coin_id": 12785,
+        "name": "Akash Network",
+        "symbol": "AKT",
+        "market_cap_rank": 150,
+        "thumb": "https://assets.coingecko.com/coins/images/12785/thumb/akash-logo.png?1615447676",
+        "small": "https://assets.coingecko.com/coins/images/12785/small/akash-logo.png?1615447676",
+        "large": "https://assets.coingecko.com/coins/images/12785/large/akash-logo.png?1615447676",
+        "slug": "akash-network",
+        "price_btc": 3.494908981319806e-05,
+        "score": 4
+      }
+    },
+    {
+      "item": {
+        "id": "stargate-finance",
+        "coin_id": 24413,
+        "name": "Stargate Finance",
+        "symbol": "STG",
+        "market_cap_rank": 224,
+        "thumb": "https://assets.coingecko.com/coins/images/24413/thumb/STG_LOGO.png?1647654518",
+        "small": "https://assets.coingecko.com/coins/images/24413/small/STG_LOGO.png?1647654518",
+        "large": "https://assets.coingecko.com/coins/images/24413/large/STG_LOGO.png?1647654518",
+        "slug": "stargate-finance",
+        "price_btc": 2.0716539168515234e-05,
+        "score": 5
+      }
+    },
+    {
+      "item": {
+        "id": "xcad-network",
+        "coin_id": 15857,
+        "name": "XCAD Network",
+        "symbol": "XCAD",
+        "market_cap_rank": 370,
+        "thumb": "https://assets.coingecko.com/coins/images/15857/thumb/logoWhiteX.jpg?1666230966",
+        "small": "https://assets.coingecko.com/coins/images/15857/small/logoWhiteX.jpg?1666230966",
+        "large": "https://assets.coingecko.com/coins/images/15857/large/logoWhiteX.jpg?1666230966",
+        "slug": "xcad-network",
+        "price_btc": 4.7561173292364346e-05,
+        "score": 6
+      }
+    },
+    {
+      "item": {
+        "id": "worldcoin-wld",
+        "coin_id": 31069,
+        "name": "Worldcoin",
+        "symbol": "WLD",
+        "market_cap_rank": 154,
+        "thumb": "https://assets.coingecko.com/coins/images/31069/thumb/worldcoin.jpeg?1690182386",
+        "small": "https://assets.coingecko.com/coins/images/31069/small/worldcoin.jpeg?1690182386",
+        "large": "https://assets.coingecko.com/coins/images/31069/large/worldcoin.jpeg?1690182386",
+        "slug": "worldcoin",
+        "price_btc": 5.9344183538648384e-05,
+        "score": 7
+      }
+    }
+  ],
+  "nfts": [ ],
+  "exchanges": [ ]
+}
