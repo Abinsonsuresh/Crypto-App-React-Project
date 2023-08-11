@@ -7,20 +7,20 @@ const CoinItem = ({coin}) => {
   return (
     <>
   
-        <tr className='h-[80px] border-b overflow-hidden'>
+        <tr className='h-[80px] w-full border-b overflow-hidden '>
             <td> <AiOutlineStar/> </td>
             <td>{market_cap_rank}</td>
             <td>
             <div className='flex items-center'>
               <img className='w-6 mr-2 rounded-full' src={image} alt="" />
-              <p>{name}</p>
+              <p className='hidden sm:table-cell'>{name}</p>
             </div>
             </td>
-            <td>{symbol}</td>
-            <td>{current_price}</td>
-            <td>{price_change_percentage_24h}</td>
-            <td>{total_volume}</td>
-            <td>{market_cap}</td>
+            <td>{symbol.toUpperCase()}</td>
+            <td>₹{current_price.toLocaleString()}</td>
+            <td>{price_change_percentage_24h > 0 ? (<p className='text-green-500'>{price_change_percentage_24h.toFixed(2)}%</p> ) : (<p className='text-red-500'>{price_change_percentage_24h.toFixed(2)}%</p> )}</td>
+            <td className='w-[180px] hidden md:table-cell'>{total_volume.toLocaleString()}</td>
+            <td className='w-[180px] hidden md:table-cell'>{market_cap}</td>
             <td>
               <Sparklines data={sparkline_in_7d.price}>
               <SparklinesLine color="teal" />

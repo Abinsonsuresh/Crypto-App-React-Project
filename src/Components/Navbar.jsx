@@ -27,7 +27,7 @@ const Navbar = () => {
     {nav ? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
     </div>
 {/* MENU BAR CONTENTS */}
-    <div className={nav ? 'md:hidden fixed right-0  top-28 flex flex-col items-center justify-start w-[70%] h-[90%] bg-gray-500 ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
+    <div className={nav ? 'md:hidden fixed right-0  top-24 flex flex-col items-center justify-start w-[70%] h-[90%] bg-gray-500 ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
       <ul className='w-full p-4'>
         <li className='border-b py-6'><Link to='/'>Home</Link></li>
         <li className='border-b py-6'><Link to='/'>Account</Link></li>

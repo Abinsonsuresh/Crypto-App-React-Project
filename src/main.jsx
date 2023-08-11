@@ -15,7 +15,5 @@ root.render(
       <App />
     </Router>
 </ThemeProvider>
-
-
   </React.StrictMode>,
 )
