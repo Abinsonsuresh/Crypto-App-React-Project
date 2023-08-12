@@ -1,12 +1,20 @@
 import React,{createContext, useContext, useEffect, useState} from "react"
 import axios from "axios"
+import { useParams } from "react-router-dom"
 
-const url = 'https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&sparkline=true'  
 const CoinMainContext = createContext()
 
-export const CoinProvider=({children})=>{
 
+
+export const CoinProvider=({children})=>{
     const [coin, setCoin] = useState({})
+    const params = useParams()
+    console.log("PARAMS")
+    console.log(params.coinId)
+    const url =
+    `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`;
+    // const {coinId} = useParams()
+    // const coinID = "ethereum"
 
     const getCoinData=()=>{
         axios.get(url).then((response)=>{

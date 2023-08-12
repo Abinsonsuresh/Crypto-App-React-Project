@@ -14,9 +14,9 @@ const Trending = ({trend}) => {
         <div className='flex flex-wrap  gap-9 items-center justify-center '>
             {
                 trend.map((FetchedTrends)=>{
-                    const {small, name, symbol, coin_id, price_btc} = FetchedTrends.item
+                    const {small, name,id, symbol, coin_id, price_btc} = FetchedTrends.item
                     return(
-                        <NavLink to={`${coin_id}`} key={coin_id}>
+                        <NavLink to={`coins/${id}`} key={coin_id}>
                         <div  className='w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 '>
                             <div className='flex flex-col items-center justify-center '>
                                 {/* img and name section */}

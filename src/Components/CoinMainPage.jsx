@@ -1,12 +1,28 @@
-import React from 'react'
-import {useCoinMainContext} from '../context/CoinMainContext'
+import React,{useState,useContext,useEffect} from 'react'
+// import {useCoinMainContext} from '../context/CoinMainContext'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import {FaTwitter, FaFacebook, FaReddit, FaGithub} from 'react-icons/fa'
 import DOMPurify from 'dompurify';
+import { useParams } from "react-router-dom"
+import axios from "axios"
+
+
 
 
 const CoinMainPage = () => {
-  const {coin} = useCoinMainContext();
+  // const {coin} = useCoinMainContext();
+  const [coin, setCoin] = useState({});
+  const params = useParams()
+
+  const url =
+    `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`;
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setCoin(response.data);
+      // console.log(response.data);
+    });
+  }, [url]);
 
   console.log(coin)
   const {image, name, price} = coin
@@ -114,7 +130,7 @@ const CoinMainPage = () => {
       </div>
 
       {/* {Description} */}
-      <div>
+      <div className='py-4'>
         <p>About {name}</p>
         <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),}}></p>
       </div>

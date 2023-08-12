@@ -9,6 +9,7 @@ import Signup from './routes/Signup'
 import Account from './routes/Account'
 import Home from './routes/Home'
 import CoinMainPage from './Components/CoinMainPage'
+import Footer from './Components/Footer'
 
 
 
@@ -26,11 +27,13 @@ function App() {
         <Route path='/signout' element={<Signup/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
         <Route>
-          <Route path='/coin/:coinID' element={<CoinMainPage/>}/>
-          <Route path=':coinID' />
+          <Route path='/coins/:coinId' element={<CoinMainPage/>}/>
+          <Route path=':coinId' />
 
         </Route>
+      {/* <Route path='/coins/:coinID' element={<CoinMainPage/>}/> */}
       </Routes>
+      <Footer/>
 
     </div>
 
