@@ -7,9 +7,12 @@ import { useCoinContext } from '../context/CoinAPI'
 import CoinItem from '../Components/CoinItem'
 
 
+
+
 const Home = () => {
-  const {coins} = useCoinContext()
+  const {coins} = useCoinContext();
   const {trend} = useTrendContext();
+
   return (
     <>
     <CoinSearch />
