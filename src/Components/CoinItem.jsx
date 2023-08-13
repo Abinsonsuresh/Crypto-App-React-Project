@@ -4,7 +4,7 @@ import { Sparklines, SparklinesLine } from 'react-sparklines';
 import { Link } from 'react-router-dom';
 
 const CoinItem = ({ coins }) => {
-  console.log(coins)
+  // console.log(coins)
   const [search, setSearch] = useState('')
   return (
     <>
@@ -39,7 +39,7 @@ const CoinItem = ({ coins }) => {
               }
             }).map((CoinsFetched) => {
               const { market_cap_rank,id, name, image, current_price, symbol, price_change_24h, total_volume, market_cap, price_change_percentage_24h, sparkline_in_7d } = CoinsFetched
-              console.log(id)
+              // console.log(id)
               return (
                 <tr key={CoinsFetched.id} className='h-[80px] w-full border-b overflow-hidden '>
                   <td> <AiOutlineStar /> </td>
@@ -51,7 +51,6 @@ const CoinItem = ({ coins }) => {
                       <p className='hidden sm:table-cell'>{name}</p>
                     </div>
                     </Link>
-
                   </td>
                   <td>{symbol.toUpperCase()}</td>
                   <td>₹{current_price.toLocaleString()}</td>

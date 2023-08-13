@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/signin' element={<Signin/>}></Route>
-        <Route path='/signout' element={<Signup/>}></Route>
+        <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
         <Route>
           <Route path='/coins/:coinId' element={<CoinMainPage/>}/>
@@ -34,6 +34,7 @@ function App() {
       {/* <Route path='/coins/:coinID' element={<CoinMainPage/>}/> */}
       </Routes>
       <Footer/>
+      {/* <Signin/> */}
 
     </div>
 
