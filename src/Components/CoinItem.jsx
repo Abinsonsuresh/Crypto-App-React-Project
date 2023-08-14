@@ -1,11 +1,48 @@
 import React, { useState } from 'react'
-import { AiOutlineStar } from 'react-icons/ai'
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import { Link } from 'react-router-dom';
+import {db} from '../firebase'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { userAuth } from '../context/AuthContext';
+import { useCoinContext } from '../context/CoinAPI'
 
-const CoinItem = ({ coins }) => {
+
+const CoinItem = () => {
+  const {coins} = useCoinContext();
+
+  // let cpp = coins.id;
   // console.log(coins)
+  // const { market_cap_rank,id, name, image, current_price, symbol, } = coins
+  console.log(coins)
+  // console.log(coins.id)
+
+  // name: coins.name,
+  // image: coins.image,
+  // rank: coins.market_cap_rank,
+  // symbol: coins.symbol,
   const [search, setSearch] = useState('')
+  const [savedCoin, setSavedCoin] = useState(false);
+  const { user } = userAuth();
+  const setsave =()=>{setSavedCoin(true)}
+
+  const coinPath = doc(db, 'users', `${user?.email}`);
+  const saveCoin = async () => {
+    if (user?.email) {
+      setSavedCoin(true);
+      await updateDoc(coinPath, {
+     
+        watchList: arrayUnion({
+          id: coins.id,
+      
+        }),
+      });
+    } else {
+      alert('Please sign in to save a coin to your watch list');
+    }
+  };
+
+
   return (
     <>
         <div className=' flex items-center justify-center'>
@@ -42,7 +79,13 @@ const CoinItem = ({ coins }) => {
               // console.log(id)
               return (
                 <tr key={CoinsFetched.id} className='h-[80px] w-full border-b overflow-hidden '>
-                  <td> <AiOutlineStar /> </td>
+
+
+                  <td onClick= {setsave} > 
+                  {savedCoin ? <AiFillStar /> : <AiOutlineStar />}
+                  </td>
+
+
                   <td>{market_cap_rank}</td>
                   <td>
                     <Link to={`/coins/${id}`}>

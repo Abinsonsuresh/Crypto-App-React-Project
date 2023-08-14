@@ -7,6 +7,8 @@ const Trending = ({trend}) => {
 
     console.log("ter")
     console.log(trend)
+    // console.log(trend.id)
+
   return (
     <>
         <h1>Trending Coins</h1>

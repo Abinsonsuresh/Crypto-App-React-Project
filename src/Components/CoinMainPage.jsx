@@ -5,6 +5,13 @@ import {FaTwitter, FaFacebook, FaReddit, FaGithub} from 'react-icons/fa'
 import DOMPurify from 'dompurify';
 import { useParams } from "react-router-dom"
 import axios from "axios"
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+
+
+import {db} from '../firebase'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { userAuth } from '../context/AuthContext';
+// import { useCoinContext } from '../context/CoinAPI'
 
 
 
@@ -24,8 +31,31 @@ const CoinMainPage = () => {
     });
   }, [url]);
 
-  console.log(coin)
+  // console.log(coin)
+  console.log(coin.id)
+
   const {image, name, price} = coin
+
+  const [savedCoin, setSavedCoin] = useState(false);
+  const { user } = userAuth();
+  const setsave =()=>{setSavedCoin(true)}
+
+  const coinPath = doc(db, 'users', `${user?.email}`);
+  const saveCoin = async () => {
+    if (user?.email) {
+      setSavedCoin(true);
+      await updateDoc(coinPath, {
+     
+        watchList: arrayUnion({
+          id: coin.id,
+      
+        }),
+      });
+    } else {
+      alert('Please sign in to save a coin to your watch list');
+    }
+  };
+
 
   return (
     <div className='rounded-div py-8 my-12'>
@@ -41,8 +71,16 @@ const CoinMainPage = () => {
         <div>
           <div className='flex justify-between'>
             {coin.market_data?.current_price ? (<p className='text-2xl font-bold'>₹{coin.market_data?.current_price.inr.toLocaleString()}</p>) : null}
+            <div className='flex'>
             <p>7 Day</p>
+            <div onClick={saveCoin}>{savedCoin ? <AiFillStar /> : <AiOutlineStar />}</div>
+            </div>
           </div>
+
+
+
+
+
           <div className=''>
                 <Sparklines data = {coin.market_data?.sparkline_7d.price}>
                   <SparklinesLine color='teal'></SparklinesLine>

@@ -14,6 +14,8 @@ const Signup = () => {
     setError('')
     try{
       await signup(email, password)
+      navigate('/account')
+
     }
     catch (event){
       setError(event.message)
@@ -30,7 +32,8 @@ const Signup = () => {
       <div className='my-4'>
         <label>Email</label>
         <div className='my-2 w-full relative rounded-2xl shadow-lg '>
-          <input onChange={(event)=>{setEmail(event.target.value)}} className='bg-primary w-full border border-input rounded-2xl p-2' type='email' placeholder='Enter your Email'></input>
+          <input value={email} onChange={(event)=>{setEmail(event.target.value)}} className='bg-primary w-full border border-input rounded-2xl p-2' type='email' placeholder='Enter your Email'></input>
+
           <AiOutlineMail className='absolute top-3 right-3'/>
         </div>
       </div>

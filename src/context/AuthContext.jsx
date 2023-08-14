@@ -8,10 +8,11 @@ const UserContext = createContext()
 export const AuthContextProvider = ({children})=>{
 
     const [user, setUser] = useState({})
+
     const signup = (email, password)=>{
         createUserWithEmailAndPassword(auth, email, password)
         return setDoc(doc(db, 'users', email),{
-            watchlist: [],
+            watchlist: [],coins: [],
         })
     }
 
