@@ -19,14 +19,14 @@ const Trending = ({trend}) => {
                     const {small, name,id, symbol, coin_id, price_btc} = FetchedTrends.item
                     return(
                         <NavLink to={`coins/${id}`} key={coin_id}>
-                        <div  className='w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 '>
+                        <div  className='w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 overflow-hidden'>
                             <div className='flex flex-col items-center justify-center '>
                                 {/* img and name section */}
                                 <div className='flex flex-col items-center justify-center text-center'>
                                     <img className='w-12' src={small} alt="" />
-                                    <div>
+                                    <div >
                                         <p className='text-md font-bold'>{symbol}</p>
-                                        <p className='font-normal text-sm'>{name}</p>
+                                        <p className='font-normal text-sm'>{name.length > 20 ? name.slice(0,20): name}</p>
 
 
                                     </div>

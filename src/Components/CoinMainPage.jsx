@@ -48,6 +48,10 @@ const CoinMainPage = () => {
      
         watchList: arrayUnion({
           id: coin.id,
+          name: coin.name,
+          image: coin.image,
+          rank: coin.market_cap_rank,
+          symbol: coin.symbol,
       
         }),
       });
@@ -71,9 +75,9 @@ const CoinMainPage = () => {
         <div>
           <div className='flex justify-between'>
             {coin.market_data?.current_price ? (<p className='text-2xl font-bold'>₹{coin.market_data?.current_price.inr.toLocaleString()}</p>) : null}
-            <div className='flex'>
-            <p>7 Day</p>
-            <div onClick={saveCoin}>{savedCoin ? <AiFillStar /> : <AiOutlineStar />}</div>
+            <div className='flex items-center text-center'>
+            <p className='mr-4'>7 Day</p>
+            <div onClick={saveCoin}>{savedCoin ? <AiFillStar size={25}/> : <AiOutlineStar size={25} />}</div>
             </div>
           </div>
 
@@ -114,45 +118,45 @@ const CoinMainPage = () => {
           <div className='flex justify-between py-8'>
             <div>
               <p>Market Rank</p>
-            {coin.market_cap_rank}
+            {coin?.market_cap_rank}
             </div>
             <div>
               <p>Trust Score</p>
-            {coin.liquidity_score ? (<p>{coin.liquidity_score.toFixed(2)}</p>) : null}
+            {coin?.liquidity_score ? (<p>{coin?.liquidity_score.toFixed(2)}</p>) : null}
             </div>
           </div>
 
           <div className='flex justify-between py-4'>
           <div>
             <p>Price Change 24h</p>
-            {coin.market_data ? (<p className={coin.market_data.price_change_percentage_24h_in_currency.inr.toFixed(2) > 0 ? 'text-green-500' : 'text-red-600'}>{coin.market_data.price_change_percentage_24h_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_24h_in_currency?.inr.toFixed(2) > 0 ? 'text-green-500' : 'text-red-600'}>{coin?.market_data?.price_change_percentage_24h_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p>Price Change 7d</p>
-            {coin.market_data ? (<p className={coin.market_data.price_change_percentage_7d_in_currency.inr.toFixed(2) > 0 ?  'text-green-500' : 'text-red-600' }>{coin.market_data.price_change_percentage_7d_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_7d_in_currency?.inr.toFixed(2) > 0 ?  'text-green-500' : 'text-red-600' }>{coin?.market_data?.price_change_percentage_7d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p>Price Change 14d</p>
-            {coin.market_data ? (<p>{coin.market_data.price_change_percentage_14d_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_14d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
           </div>
 
           <div className='flex justify-between py-4'>
           <div>
             <p>Price Change 30d</p>
-            {coin.market_data ? (<p>{coin.market_data.price_change_percentage_30d_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_30d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p>Price Change 60d</p>
-            {coin.market_data ? (<p>{coin.market_data.price_change_percentage_60d_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_60d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p>Price Change 1y</p>
-            {coin.market_data ? (<p>{coin.market_data.price_change_percentage_1y_in_currency.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_1y_in_currency?.inr?.toFixed(2)}%</p>) : null}
           </div>
           </div>
           <div className='flex text-2xl cursor-pointer  space-x-10'>

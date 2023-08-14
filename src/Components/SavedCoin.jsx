@@ -1,9 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import {doc, onSnapshot, updateDoc} from 'firebase/firestore'
+import {db} from '../firebase'
+import { userAuth } from '../context/AuthContext'
 
 const SavedCoin = () => {
-    const [coins, setCoins] = useState([1])
+
+    const [coins, setCoins] = useState([]);
+    const { user } = userAuth();
+
+    useEffect(() => {
+      onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
+        setCoins(doc.data()?.watchList);
+      });
+    }, [user?.email]);
+
+    const coinPath = doc(db, 'users', `${user?.email}`);
+
+  
   return (
     <>
     <div>
@@ -20,7 +35,7 @@ const SavedCoin = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {coins.map((coin)=>{
+                    {coins.map((coin)=>(
                         <tr key={coin.id} className='h-[60px] overflow-hidden'>
                             <td>{coin?.rank}</td>
                             <td><Link to={'/coins/${coin.id'}></Link>
@@ -37,7 +52,7 @@ const SavedCoin = () => {
                                     <AiOutlineClose/>
                                     </td>
                         </tr>
-                    })}
+                    ))}
                 </tbody>
             </table>
         )

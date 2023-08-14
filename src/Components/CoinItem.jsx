@@ -1,54 +1,20 @@
 import React, { useState } from 'react'
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { Sparklines, SparklinesLine } from 'react-sparklines';
-import { Link } from 'react-router-dom';
-import {db} from '../firebase'
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import { userAuth } from '../context/AuthContext';
 import { useCoinContext } from '../context/CoinAPI'
+import CoinItemMain from './CoinItemMain';
 
 
 const CoinItem = () => {
-  const {coins} = useCoinContext();
-
-  // let cpp = coins.id;
-  // console.log(coins)
-  // const { market_cap_rank,id, name, image, current_price, symbol, } = coins
+  const { coins } = useCoinContext();
   console.log(coins)
-  // console.log(coins.id)
-
-  // name: coins.name,
-  // image: coins.image,
-  // rank: coins.market_cap_rank,
-  // symbol: coins.symbol,
   const [search, setSearch] = useState('')
-  const [savedCoin, setSavedCoin] = useState(false);
-  const { user } = userAuth();
-  const setsave =()=>{setSavedCoin(true)}
-
-  const coinPath = doc(db, 'users', `${user?.email}`);
-  const saveCoin = async () => {
-    if (user?.email) {
-      setSavedCoin(true);
-      await updateDoc(coinPath, {
-     
-        watchList: arrayUnion({
-          id: coins.id,
-      
-        }),
-      });
-    } else {
-      alert('Please sign in to save a coin to your watch list');
-    }
-  };
 
 
   return (
     <>
-        <div className=' flex items-center justify-center'>
+      <div className=' flex items-center justify-center'>
 
         <h2 className='text-2xl mt-3 mb-3 font-bold'>Top Coins</h2>
-        </div>
+      </div>
       <div className='rounded-div my-4 pt-4'>
         <table className='w-full border-collapse text-center '>
           <thead>
@@ -74,41 +40,14 @@ const CoinItem = () => {
                 //it will return values similar to search
                 return value;
               }
-            }).map((CoinsFetched) => {
-              const { market_cap_rank,id, name, image, current_price, symbol, price_change_24h, total_volume, market_cap, price_change_percentage_24h, sparkline_in_7d } = CoinsFetched
+            }).map((CoinsFetched) =>(
+        
+              <CoinItemMain coin = {CoinsFetched}/>
+              
+            ))
               // console.log(id)
-              return (
-                <tr key={CoinsFetched.id} className='h-[80px] w-full border-b overflow-hidden '>
-
-
-                  <td onClick= {setsave} > 
-                  {savedCoin ? <AiFillStar /> : <AiOutlineStar />}
-                  </td>
-
-
-                  <td>{market_cap_rank}</td>
-                  <td>
-                    <Link to={`/coins/${id}`}>
-                    <div className='flex items-center'>
-                      <img className='w-6 mr-2 rounded-full' src={image} alt="" />
-                      <p className='hidden sm:table-cell'>{name}</p>
-                    </div>
-                    </Link>
-                  </td>
-                  <td>{symbol.toUpperCase()}</td>
-                  <td>₹{current_price.toLocaleString()}</td>
-                  <td>{price_change_percentage_24h > 0 ? (<p className='text-green-500'>{price_change_percentage_24h.toFixed(2)}%</p>) : (<p className='text-red-500'>{price_change_percentage_24h.toFixed(2)}%</p>)}</td>
-                  <td className='w-[180px] hidden md:table-cell'>{total_volume.toLocaleString()}</td>
-                  <td className='w-[180px] hidden md:table-cell'>{market_cap}</td>
-                  <td>
-                    <Sparklines data={sparkline_in_7d.price}>
-                      <SparklinesLine color="teal" />
-                    </Sparklines>
-                  </td>
-
-                </tr>
-              )
-            })}
+    
+          }
           </tbody>
         </table>
 
