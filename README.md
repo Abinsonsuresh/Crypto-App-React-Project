@@ -1,8 +1,15 @@
-# React + Vite
+----------CryptoTrix React.js Web-App---------
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Techstack used: React js, Tailwind CSS, Firebase / Firestore, Coingecko API
 
-Currently, two official plugins are available:
+Dependecies used: 
+    "axios": "^1.4.0",
+    "dompurify": "^3.0.5",
+    "firebase": "^10.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.14.2",
+    "react-sparklines": "^1.7.0"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features: Top coins and Trendincoins data, Search coin feature, signin and signout, Account and wishlist option, Light mode and Dark mode 
