@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {doc, onSnapshot, updateDoc} from 'firebase/firestore'
 import {db} from '../firebase'
 import { userAuth } from '../context/AuthContext'
@@ -9,6 +9,7 @@ const SavedCoin = () => {
 
     const [coins, setCoins] = useState([]);
     const { user } = userAuth();
+    const {navigate} = useNavigate()
 
     useEffect(() => {
       onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
@@ -34,11 +35,12 @@ const SavedCoin = () => {
     <div>
         {
         
-        coins.length === 0 ? (<p>Oops you don't have any saved coins <Link to='/'>Search coins</Link></p> ): (
+        coins.length === 0 ? (<p>Oops you don't have any saved coins <span className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Search coins</Link></span></p> ): (
+
             <table className='w-full text-center'>
                 <thead>
                     <tr className='border-b'>
-                        <th className='px-4'>Rank #</th>
+                        <th className='px-4'></th>
                         <th className='text-left'>Coin</th>
                         <th className='text-left'>Remove</th>
 
@@ -46,28 +48,32 @@ const SavedCoin = () => {
                 </thead>
                 <tbody>
                     {coins.map((coin)=>(
-                        <tr key={coin.id} className='h-[60px] overflow-hidden'>
-                            <td>{coin?.rank}</td>
-                            <td><Link to={'/coins/${coin.id'}></Link>
-                            <div>
+                        <tr key={coin.id} className='h-[60px] overflow-hidden border-b '>
+                            <td></td>
+                            <td className='py-4 '><Link to={'/coins/${coin.id'}></Link>
+                            <div >
                                 <img src={coin?.image} className='w-8' alt="/" />
-                                <div>
+                                <div className='flex items-center justify-center space-x-5'>
                                     <p>{coin?.name}</p>
-                                    <p>{coin?.symbol}</p>
+                                    <p>{coin?.symbol.toUpperCase()}</p>
 
                                 </div>
                                 </div>
                                 </td>
                                 <td>
-                                    <AiOutlineClose onClick={()=>RemoveCoin(coin.id)}/>
+                                    <AiOutlineClose size={25} onClick={()=>RemoveCoin(coin.id)}/>
                                     </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
         )
-        }
+    }
     </div>
+    <div className='flex items-center justify-center py-8'>
+        <button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Add more</Link></button>
+        </div>
+    
     </>
   )
 }
