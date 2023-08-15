@@ -11,7 +11,7 @@ const Trending = ({trend}) => {
 
   return (
     <>
-        <h1>Trending Coins</h1>
+        <h1 className='text-2xl font-bold flex justify-center'>Trending Coins</h1>
     <div className='rounded-div my-12 py-8 '>
         <div className='flex flex-wrap  gap-9 items-center justify-center '>
             {

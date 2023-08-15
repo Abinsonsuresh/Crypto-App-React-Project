@@ -5,6 +5,8 @@ const CoinAPIContext = createContext()
 
 export const CoinAPIProvider=({children})=>{
     const [coins, setCoins] = useState([])
+  const [search, setSearch] = useState('')
+
     console.log("hello")
     const getCoin = () => {
         axios.get(url).then((response) => {
@@ -17,10 +19,10 @@ export const CoinAPIProvider=({children})=>{
     },[url])
 
     return(
-        <CoinAPIContext.Provider value={{coins}}>
+        <CoinAPIContext.Provider value={{coins,search, setSearch}}>
             {children}
         </CoinAPIContext.Provider>
-    )
+    )  
 }
 
 

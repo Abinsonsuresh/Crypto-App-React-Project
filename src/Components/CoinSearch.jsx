@@ -1,24 +1,23 @@
 import React, { useState } from 'react'
 import CoinItem from './CoinItem'
+import { useCoinContext } from '../context/CoinAPI'
 
 
-const CoinSearch = ({coins}) => {
-
+const CoinSearch = () => {
+const {search, setSearch} = useCoinContext()
   return (
     <>
       <div className='max-w-[1380px]  rounded-xl p-2 shadow-xl mx-auto my-4'>
-        <div className='flex flex-col items-center md:flex-row justify-between pt-4 pb-6 text-center md:text-right '>
+        <div className='flex flex-col  md:flex-row md:justify-between pt-4 pb-6 text-center md:text-right '>
         <h1 className='text-2xl font-semibold'>Search Crypto</h1>
         <form >
-          <input className='bg-primary border border-input p-2 mr-2 w-full shadow-xl rounded-2xl md:w-auto' type="text" placeholder=' Search coins' 
+          <input className='w-full bg-primary border border-input px-4 py-2 mr-2  shadow-xl rounded-2xl md:w-80 ' type="text" placeholder=' Search coins' 
           onChange={(event)=>{
             setSearch(event.target.value)
           }}/>
         </form>
       </div>
-
-      
-      
+     
       </div>
 
     </>
@@ -26,3 +25,5 @@ const CoinSearch = ({coins}) => {
 }
 
 export default CoinSearch
+
+// w-full bg-primary border border-input px-4 py-2 mr-2  shadow-xl rounded-2xl md:w-auto

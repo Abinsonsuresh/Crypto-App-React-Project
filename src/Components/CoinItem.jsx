@@ -6,7 +6,7 @@ import CoinItemMain from './CoinItemMain';
 const CoinItem = () => {
   const { coins } = useCoinContext();
   console.log(coins)
-  const [search, setSearch] = useState('')
+  const {search, setSearch} = useCoinContext()
 
 
   return (

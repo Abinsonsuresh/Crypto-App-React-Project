@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import SavedCoin from '../Components/SavedCoin'
 import { userAuth } from '../context/AuthContext'
-import { Link, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Account = () => {
@@ -16,6 +16,8 @@ const Account = () => {
       console.log(e.message)
     }
   }
+if(user)
+{
   return (
     <>
     <div className='max-w[1140px] mx-auto'>
@@ -38,6 +40,10 @@ const Account = () => {
     </div>
     </>
   )
+}
+else{
+  return <Navigate to='/signin'/>
+}
 }
 
 export default Account

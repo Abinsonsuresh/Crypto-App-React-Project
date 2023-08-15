@@ -137,9 +137,9 @@ const CoinMainPage = () => {
             {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_7d_in_currency?.inr.toFixed(2) > 0 ?  'text-green-500' : 'text-red-600' }>{coin?.market_data?.price_change_percentage_7d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
-          <div>
+          <div className=''>
             <p>Price Change 14d</p>
-            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_14d_in_currency?.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_14d_in_currency?.inr.toFixed(2) > 0 ? 'text-green-500' : 'text-red-600'}>{coin?.market_data?.price_change_percentage_14d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
           </div>
 
@@ -173,7 +173,7 @@ const CoinMainPage = () => {
 
       {/* {Description} */}
       <div className='py-4'>
-        <p>About {name}</p>
+        <p className='text-xl font-semibold py-4'>About {name}</p>
         <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),}}></p>
       </div>
     </div>
