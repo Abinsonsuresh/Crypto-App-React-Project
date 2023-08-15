@@ -18,6 +18,16 @@ const SavedCoin = () => {
 
     const coinPath = doc(db, 'users', `${user?.email}`);
 
+    const RemoveCoin = async(passedid)=>{
+        try{
+            const result = coins.filter((item)=> item.id != passedid)
+            await updateDoc(coinPath, {watchList: result})
+        }
+        catch(e){
+            console.log(e.message)
+        }
+    }
+
   
   return (
     <>
@@ -49,7 +59,7 @@ const SavedCoin = () => {
                                 </div>
                                 </td>
                                 <td>
-                                    <AiOutlineClose/>
+                                    <AiOutlineClose onClick={()=>RemoveCoin(coin.id)}/>
                                     </td>
                         </tr>
                     ))}

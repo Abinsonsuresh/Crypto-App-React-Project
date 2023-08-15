@@ -12,7 +12,7 @@ export const AuthContextProvider = ({children})=>{
     const signup = (email, password)=>{
         createUserWithEmailAndPassword(auth, email, password)
         return setDoc(doc(db, 'users', email),{
-            watchlist: [],coins: [],
+            watchList: [],coins: [],
         })
     }
 

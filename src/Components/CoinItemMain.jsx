@@ -28,12 +28,11 @@ const CoinItemMain = ({coin}) => {
                 }),
               });
             } else {
-              alert('Please sign in to save a coin to your watch list');
+              alert('Sign in before you save a coin to your watch list');
             }
           };
         
        return (
-
         <tr key={coin.id} className='h-[80px] w-full border-b overflow-hidden '>
 
           <td onClick={saveCoin} >
