@@ -3,8 +3,6 @@ import { Link} from 'react-router-dom'
 
 import { AiOutlineInstagram,AiOutlineCopyrightCircle } from 'react-icons/ai';
 import {
-  FaFacebookF,
-  FaGit,
   FaGithub,
   FaLinkedin,
   FaTwitter,

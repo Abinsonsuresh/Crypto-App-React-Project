@@ -35,9 +35,28 @@ const SavedCoin = () => {
     <div>
         {
         
-        coins.length === 0 ? (<p>Oops you don't have any saved coins <span className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Search coins</Link></span></p> ): (
+        coins.length === 0 ? (<p>Oops you don't have any saved coins </p> ): (
+            <div>
+                <div className='flex flex-wrap gap-5'>
+                    {
+                        coins.map((coin)=>(
+                            <div>
+                            <div className='w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 overflow-hidden' >
+                                <div className='flex items-center justify-center flex-col space-y-2 p-4'>
+                                <img src={coin?.image} className='w-12' alt="/" />
+                                    {/* <p>{coin?.name}</p> */}
+                                    <p className='font-semibold'>{coin?.symbol.toUpperCase()}</p>
 
-            <table className='w-full text-center'>
+                                </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                      
+                </div>
+           
+
+            {/* <table className='w-full text-center'>
                 <thead>
                     <tr className='border-b'>
                         <th className='px-4'></th>
@@ -64,14 +83,19 @@ const SavedCoin = () => {
                                     <AiOutlineClose size={25} onClick={()=>RemoveCoin(coin.id)}/>
                                     </td>
                         </tr>
+                      
                     ))}
                 </tbody>
-            </table>
+            </table> */}
+            </div>
         )
     }
     </div>
     <div className='flex items-center justify-center py-8'>
-        <button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Add more</Link></button>
+        {
+            coins.length === 0 ? (<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Search coins</Link></button>) :(<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Add more</Link></button>)
+
+        }
         </div>
     
     </>

@@ -12,7 +12,6 @@ const CoinItem = () => {
   return (
     <>
       <div className=' flex items-center justify-center'>
-
         <h2 className='text-2xl mt-3 mb-3 font-bold'>Top Coins</h2>
       </div>
       <div className='rounded-div my-4 pt-4'>
@@ -42,7 +41,7 @@ const CoinItem = () => {
               }
             }).map((CoinsFetched) =>(
         
-              <CoinItemMain coin = {CoinsFetched}/>
+              <CoinItemMain key={CoinsFetched.id} coin = {CoinsFetched}/>
               
             ))
               // console.log(id)

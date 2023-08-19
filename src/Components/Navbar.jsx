@@ -48,12 +48,14 @@ const Navbar = () => {
 {/* MENU BAR CONTENTS */}
     <div className={nav ? 'md:hidden fixed right-0  top-24 flex flex-col items-center justify-start w-[70%] h-[90%] bg-gray-500 ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
       <ul className='w-full p-4'>
+      <li className='border-b py-6'> <ThemeToggleBtn/></li>
+
         <li className='border-b py-6'><Link onClick={shownav} to='/'>Home</Link></li>
-        <li className='border-b py-6'><Link onClick={shownav} to='/'>Account</Link></li>
+        { user?.email ? (<ul> 
+          <li className='border-b py-6'><Link onClick={shownav} to='/account'>Account</Link></li>
+      <button className='w-full my-2 p-3 bg-button text-btnText border-white rounded-2xl shadow-xl' onClick={handlesignOut}>Sign out</button>
 
-
-        <li className='border-b py-6'> <ThemeToggleBtn/></li>
-      </ul>
+        </ul>) : (
       <div className='flex flex-col w-full p-4'>
         <Link onClick={shownav} to='/signin'>
         <button className='w-full my-2 p-3 bg-primary text-primary border-white rounded-2xl shadow-xl'>Sign In</button>
@@ -62,7 +64,10 @@ const Navbar = () => {
         <button className='w-full my-2 p-3 bg-button text-btnText border-white rounded-2xl shadow-xl'>Sign Up</button>
         </Link>
 
-      </div>
+      </div>) } 
+
+      </ul>
+
     </div>
 {/* MENU BAR CONTENTS */}
     </div>
