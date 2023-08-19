@@ -11,7 +11,7 @@ export const CoinAPIProvider=({children})=>{
     const getCoin = () => {
         axios.get(url).then((response) => {
             setCoins(response.data)
-            // console.log(response.log)
+
         })
     }
     useEffect(()=>{

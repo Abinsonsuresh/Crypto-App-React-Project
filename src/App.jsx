@@ -1,6 +1,5 @@
 import './App.css'
-import React, {useState,useEffect} from 'react'
-
+import React from 'react'
 // import { ThemeProvider } from './context/Theme'
 import Navbar from './Components/Navbar'
 import { Routes, Route } from "react-router-dom"
@@ -10,9 +9,7 @@ import Account from './routes/Account'
 import Home from './routes/Home'
 import CoinMainPage from './Components/CoinMainPage'
 import Footer from './Components/Footer'
-
-
-
+import Market from './pages/Market'
 
 
 function App() {
@@ -26,10 +23,11 @@ function App() {
         <Route path='/signin' element={<Signin/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
+        <Route path='/market' element={<Market/>}></Route>
+
         <Route>
           <Route path='/coins/:coinId' element={<CoinMainPage/>}/>
           <Route path=':coinId' />
-
         </Route>
       {/* <Route path='/coins/:coinID' element={<CoinMainPage/>}/> */}
       </Routes>

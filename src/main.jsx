@@ -7,6 +7,8 @@ import { ThemeProvider } from './context/Theme'
 import { TrendProvider } from './context/TrendingAPIContext.jsx'
 import { CoinAPIProvider } from  './context/CoinAPI.jsx'
 import { AuthContextProvider } from './context/AuthContext.jsx'
+import { MarketAPIProvider } from './context/MarketContext.jsx'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -17,11 +19,13 @@ root.render(
 <AuthContextProvider>
   <CoinAPIProvider>
   <TrendProvider>
+    <MarketAPIProvider>
 
     <Router>
       <App />
     </Router>
 
+    </MarketAPIProvider>
     </TrendProvider>
     </CoinAPIProvider>
     </AuthContextProvider>
