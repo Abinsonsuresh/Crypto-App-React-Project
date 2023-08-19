@@ -33,7 +33,7 @@ if(user)
 
       <div className='flex justify-between items-center my-12 py-8 rounded-div'>
         <div className='w-full min-h-[300px]'>
-          <h1 className='py-4 font-bold text-2xl'>Watchlist</h1>
+          <h1 className='py-4 font-bold text-2xl text-center'>Watchlist</h1>
           <SavedCoin/>
         </div>
       </div>

@@ -37,7 +37,7 @@ const SavedCoin = () => {
         
         coins.length === 0 ? (<p>Oops you don't have any saved coins </p> ): (
             <div>
-                <div className='flex flex-wrap gap-5'>
+                <div className='flex flex-wrap gap-5 items-center justify-center '>
                     {
                         coins.map((coin)=>(
                             <div>
