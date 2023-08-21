@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
-import { useCoinContext } from '../context/CoinAPI'
-import CoinItemMain from '../Components/CoinItemMain';
 import CoinSearch from '../Components/CoinSearch';
 import { useMarketContext } from '../context/MarketContext';
 import MarketItem from '../Components/MarketItem';
+import Pagination from '../Components/Pagination';
 
 
 
 
 const Market = () => {
   const { mdata } = useMarketContext();
-const [mpage , setMage] = useState(1)
+const [currentpage , setCurrentpage] = useState(1)
+const [postperpage , setPostperpage] = useState(10)
+
+const lastpost = currentpage * postperpage;  //if cp = 2 pp= 10 then cp * pp ->lp = 20
+const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp -> fp = 20 -10 = 10
+
+
   console.log(mdata)
   return (
     <>
@@ -32,12 +37,16 @@ const [mpage , setMage] = useState(1)
         </thead>
         <tbody>
            {
-            mdata.slice((mpage -1 ) * 10,(mpage -1 ) * 10 + 10 ).map((mvalue)=>(
+            mdata.slice(firstpost, lastpost ).map((mvalue)=>(
               <MarketItem data={mvalue} key = {mvalue.id}/>
             ))
            }
         </tbody>
     </table>
+
+    <Pagination setCurrentpage={setCurrentpage} currentpage= {currentpage} totalpost = {mdata.length} postperpage= {postperpage} />
+
+
     </div>
     </>
   )
