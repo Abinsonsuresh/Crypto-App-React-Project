@@ -24,7 +24,7 @@ export const MarketAPIProvider =({children})=>{
 
 
     return(
-        <SearchContext.Provider value={{sdata}}>{children}</SearchContext.Provider>
+        <SearchContext.Provider value={{sdata, setsearch}}>{children}</SearchContext.Provider>
     )
 
 }

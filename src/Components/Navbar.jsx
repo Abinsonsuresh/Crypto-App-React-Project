@@ -34,21 +34,29 @@ const Navbar = () => {
     </div>
 
     {user?.email ? (<div className='hidden md:block'>
+    <Link  className='p-4' to='/market'>Market</Link>
       <Link  className='p-4' to='/account'>Account</Link>
       <button onClick={handlesignOut}>Sign out</button>
     </div>) : (<div className='hidden md:block'>
+    <Link  className='p-4' to='/market'>Market</Link>
       <Link  to='/signin' className='p-4 hover:text-accent'>Sign In</Link>
       <Link  to='/signup' className=' bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'>Sign Up</Link>
     </div>)}
 
+
 {/* MENU BAR */}
     <div  onClick={shownav} className='md:hidden cursor-pointer z-10'>
-    {nav ? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
+    {nav ? null : <AiOutlineMenu size={25}/>}
     </div>
 {/* MENU BAR CONTENTS */}
-    <div className={nav ? 'md:hidden fixed right-0  top-24 flex flex-col items-center justify-start w-[70%] h-[90%] bg-gray-500 ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
-      <ul className='w-full p-4'>
+    <div className={nav ? 'md:hidden fixed right-0  top-0 flex flex-col items-center justify-start w-[70%] h-[100%] bg-primary ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
+    <div  onClick={shownav} className='md:hidden cursor-pointer z-10 fixed right-5 top-11'>
+    {nav ? <AiOutlineClose size={25}/> : null }
+    </div>
+      <ul className='w-full p-4 my-8'>
       <li className='border-b py-6'> <ThemeToggleBtn/></li>
+
+    <li className='border-b py-6'> <Link  to='/market'>Market</Link> </li>
 
         <li className='border-b py-6'><Link onClick={shownav} to='/'>Home</Link></li>
         { user?.email ? (<ul> 
