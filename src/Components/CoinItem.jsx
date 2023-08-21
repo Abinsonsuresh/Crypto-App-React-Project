@@ -30,16 +30,7 @@ const CoinItem = () => {
             </tr>
           </thead>
           <tbody>
-            {coins.filter((value) => {
-              if (search === '') {
-                //it will return any content that is related to any of the letter in search
-                return value;
-              }
-              else if (value.name.toLowerCase().includes(search.toLocaleLowerCase())) {
-                //it will return values similar to search
-                return value;
-              }
-            }).map((CoinsFetched) =>(
+            {coins.map((CoinsFetched) =>(
         
               <CoinItemMain key={CoinsFetched.id} coin = {CoinsFetched}/>
               
@@ -57,3 +48,15 @@ const CoinItem = () => {
 }
 
 export default CoinItem
+
+
+// .filter((value) => {
+//   if (search === '') {
+//     //it will return any content that is related to any of the letter in search
+//     return value;
+//   }
+//   else if (value.name.toLowerCase().includes(search.toLocaleLowerCase())) {
+//     //it will return values similar to search
+//     return value;
+//   }
+// })

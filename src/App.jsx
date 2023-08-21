@@ -9,7 +9,8 @@ import Account from './routes/Account'
 import Home from './routes/Home'
 import CoinMainPage from './Components/CoinMainPage'
 import Footer from './Components/Footer'
-import Market from './pages/Market'
+import Market from './routes/Market'
+
 
 
 function App() {

@@ -1,11 +1,11 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 const MarketContext = createContext()
 
 export const MarketAPIProvider =({children})=>{
     const [mdata, setMdata] = useState([])
-    const [msearch, setMsearch] = useState('')
+    // const [msearch, setMsearch] = useState('')
     const [page, setPage] = useState('')
     const [currency, setCurrency] = useState('inr')
 
@@ -32,4 +32,8 @@ export const MarketAPIProvider =({children})=>{
         <MarketContext.Provider value={{mdata}}>{children}</MarketContext.Provider>
     )
 
+}
+
+export const useMarketContext =()=>{
+    return useContext(MarketContext)
 }
