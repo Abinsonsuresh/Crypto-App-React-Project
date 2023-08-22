@@ -4,7 +4,7 @@ import { useSearchContext } from '../context/SearchContext'
 
 const CoinSearch = () => {
 const {search, setSearch} = useSearchContext()
-console.log(visiblity)
+
 
 const ChangeSearch = (event)=>{
   setSearch(event.target.value)
