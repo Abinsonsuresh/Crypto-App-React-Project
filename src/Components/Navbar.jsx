@@ -9,7 +9,6 @@ import { useSearchContext } from '../context/SearchContext';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-  const { setVisiblity, visiblity} = useSearchContext()
   const { user, logout } = userAuth()
   const navigate = useNavigate()
 
@@ -36,7 +35,7 @@ const Navbar = () => {
           <ThemeToggleBtn />
         </div>
         <div className='flex items-center justify-end'>
-        <Link onClick={()=>{setVisiblity(!visiblity)}} to='/search' className='p-4 '><MdOutlineSearch size={25}/></Link>
+        <Link  to='/search' className='p-4 hidden md:block'><MdOutlineSearch size={25}/></Link>
 
           {user?.email ? (<div className='hidden md:block'>
           <Link className='p-4' to='/market'>Market</Link>
