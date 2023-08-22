@@ -81,10 +81,6 @@ const CoinMainPage = () => {
             </div>
           </div>
 
-
-
-
-
           <div className=''>
                 <Sparklines data = {coin.market_data?.sparkline_7d.price}>
                   <SparklinesLine color='teal'></SparklinesLine>
@@ -146,17 +142,17 @@ const CoinMainPage = () => {
           <div className='flex justify-between py-4'>
           <div>
             <p className='text-sm text-gray-400'>Price Change 30d</p>
-            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_30d_in_currency?.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_30d_in_currency?.inr.toFixed(2) > 0 ? 'text-green-500' : 'text-red-600' }>{coin?.market_data?.price_change_percentage_30d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p className='text-sm text-gray-400'>Price Change 60d</p>
-            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_60d_in_currency?.inr.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className= {coin?.market_data?.price_change_percentage_60d_in_currency?.inr.toFixed(2) > 0 ?  'text-green-500' : 'text-red-600' }>{coin?.market_data?.price_change_percentage_60d_in_currency?.inr.toFixed(2)}%</p>) : null}
           </div>
 
           <div>
             <p className='text-sm text-gray-400'>Price Change 1y</p>
-            {coin?.market_data ? (<p>{coin?.market_data?.price_change_percentage_1y_in_currency?.inr?.toFixed(2)}%</p>) : null}
+            {coin?.market_data ? (<p className={coin?.market_data?.price_change_percentage_1y_in_currency?.inr?.toFixed(2) > 0 ? 'text-green-500' : 'text-red-600' }>{coin?.market_data?.price_change_percentage_1y_in_currency?.inr?.toFixed(2)}%</p>) : null}
           </div>
           </div>
           <div className='flex text-2xl cursor-pointer  space-x-10'>
