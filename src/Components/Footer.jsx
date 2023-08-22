@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
     </div>
     </div>
-      <p className='text-center py-4 '>Copyright © All rights reserved CryptoTrix React-webapp-project: Created by Abinson Suresh</p>
+      <p className='text-center py-4 '>Copyright © 2023 CryptoTrix - Created by Abinson Suresh</p>
       <div className='flex items-center justify-center space-x-2'>
       <p className='text-center py-4 font-bold'>Go to Github repo:</p>
       <button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><a href="https://github.com/Abinsonsuresh/Crypto-App-React-Project" target="_blank">Github</a></button>
