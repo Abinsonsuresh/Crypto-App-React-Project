@@ -17,17 +17,12 @@ const SearchPage = () => {
         <thead>
           <tr>
             <th></th>
-            {/* <th>#</th> */}
             <th className='text-left'>Coin</th>
-            {/* <th className=''></th> */}
-
-
-            
           </tr>
         </thead>
         <tbody>
-          {sdata.map((CoinsFetched) =>(
-            <SearchItem coin = {CoinsFetched} key={CoinsFetched.id}/>
+          {sdata?.map((CoinsFetched) =>(
+            <SearchItem coin = {CoinsFetched} key={CoinsFetched?.id}/>
             
           ))
           }
