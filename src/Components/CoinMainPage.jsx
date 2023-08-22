@@ -5,19 +5,21 @@ import {FaTwitter, FaFacebook, FaReddit, FaGithub} from 'react-icons/fa'
 import DOMPurify from 'dompurify';
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-
+import { AiFillStar, AiOutlineStar,AiOutlineInstagram } from 'react-icons/ai'
+import {
+  FaLinkedin,
+} from 'react-icons/fa';
 
 import {db} from '../firebase'
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { userAuth } from '../context/AuthContext';
-// import { useCoinContext } from '../context/CoinAPI'
+
 
 
 
 
 const CoinMainPage = () => {
-  // const {coin} = useCoinMainContext();
+
   const [coin, setCoin] = useState({});
   const params = useParams()
 
@@ -31,8 +33,7 @@ const CoinMainPage = () => {
     });
   }, [url]);
 
-  // console.log(coin)
-  console.log(coin.id)
+
 
   const {image, name} = coin
 
@@ -156,10 +157,11 @@ const CoinMainPage = () => {
           </div>
           </div>
           <div className='flex text-2xl cursor-pointer  space-x-10'>
-          <FaTwitter color='lightblue'/>
-          <FaFacebook color='blue'/>
-          <FaReddit color='red'/>
-          <FaGithub color='black'/>
+          <a href="https://twitter.com/abinsonsuresh" target="_blank">  <FaTwitter color='lightblue' /></a>
+          <a href="https://www.instagram.com/abinsonsuresh/" target="_blank">  <AiOutlineInstagram color= 'red' /></a>
+          <a href="https://github.com/Abinsonsuresh/" target="_blank"> <FaGithub  color='black' size={25}/></a>
+          <a href="https://www.linkedin.com/in/abinsonsuresh/" target="_blank"><FaLinkedin color='blue'/></a>
+
 
         </div>
         </div>

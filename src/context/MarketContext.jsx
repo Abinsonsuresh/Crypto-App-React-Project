@@ -18,7 +18,7 @@ export const MarketAPIProvider =({children})=>{
     const getMarketData =()=>{
         axios.get(url).then((response)=>{
             setMdata(response.data)
-            console.log(response.data)
+            // console.log(response.data)
 
         })
     }

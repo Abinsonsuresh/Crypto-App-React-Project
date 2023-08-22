@@ -5,8 +5,8 @@ const TrendContext = createContext()
 
 const TrendProvider = ({ children }) => {
     const [trend, setTrend] = useState([])
-    // const [kuch, setKuch] = useState("Good")
-    console.log(trend)
+
+    // console.log(trend)
     const getTrend = () => {
         axios.get(url).then((response) => {
             setTrend(response.data.coins)
@@ -15,7 +15,7 @@ const TrendProvider = ({ children }) => {
     }
     useEffect(() => {
         getTrend()
-    }, [])
+    }, [url])
 
 
 

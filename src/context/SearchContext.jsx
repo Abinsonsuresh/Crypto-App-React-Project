@@ -15,7 +15,7 @@ export const SearchAPIProvider =({children})=>{
     const getSearchData =()=>{
         axios.get(url).then((response)=>{
             setSdata(response.data.coins)
-            console.log(response.data)
+            // console.log(response.data)
         })
     }
 
