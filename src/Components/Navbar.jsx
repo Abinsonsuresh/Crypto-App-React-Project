@@ -54,7 +54,7 @@ const Navbar = () => {
         {/* MENU BAR */}
         <div className='flex items-center md:hidden'>
         <div>
-        <Link to='/search' className='p-4 lg:hidden'><MdOutlineSearch size={25}/></Link>
+        <Link to='/search' className='p-4 mr-2 lg:hidden'><MdOutlineSearch size={25}/></Link>
         </div>
         <div onClick={shownav} className='md:hidden cursor-pointer z-10'>
           {nav ? null : <AiOutlineMenu size={25} />}
