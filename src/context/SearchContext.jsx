@@ -6,6 +6,8 @@ const SearchContext = createContext()
 export const SearchAPIProvider =({children})=>{
     const [sdata, setSdata] = useState([])
     const [search, setSearch] = useState('bitcoin')
+   
+
 
     const url = `https://api.coingecko.com/api/v3/search?query=${search}`
 
@@ -14,7 +16,6 @@ export const SearchAPIProvider =({children})=>{
         axios.get(url).then((response)=>{
             setSdata(response.data.coins)
             console.log(response.data)
-
         })
     }
 

@@ -4,12 +4,14 @@ import { useSearchContext } from '../context/SearchContext'
 
 const CoinSearch = () => {
 const {search, setSearch} = useSearchContext()
-const ChangeSearch = (event)=>[
+console.log(visiblity)
+
+const ChangeSearch = (event)=>{
   setSearch(event.target.value)
-]
-  return (
-    <>
-      <div className='max-w-[1380px]  rounded-xl p-2 shadow-xl mx-auto my-4'>
+}
+return (
+  <>
+  <div className='max-w-[1380px]  rounded-xl p-2 shadow-xl mx-auto my-4'>
         <div className='flex flex-col items-center  md:flex-row md:justify-between pt-4 pb-6 text-center md:text-right '>
         <h1 className='hidden md:block text-2xl font-semibold'>Search Crypto</h1>
         <form action='#' onSubmit={(event)=>{event.preventDefault()}}>
@@ -20,6 +22,7 @@ const ChangeSearch = (event)=>[
       </div>
      
       </div>
+      
 
     </>
   )

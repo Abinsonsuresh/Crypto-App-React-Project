@@ -6,8 +6,11 @@ import CoinSearch from '../Components/CoinSearch'
 const SearchPage = () => {
   const {sdata} = useSearchContext()
 
+
+
   return (
     <>
+    
     <CoinSearch/>
     <div className=' flex items-center justify-center'>
       {/* <h2 className='text-2xl mt-3 mb-3 font-bold'>Top Coins</h2> */}
