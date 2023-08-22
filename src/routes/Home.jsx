@@ -13,7 +13,6 @@ const Home = () => {
 
   return (
     <>
-    <CoinSearch />
     <CoinItem />
     <Trending trend = {trend}/>
     </>

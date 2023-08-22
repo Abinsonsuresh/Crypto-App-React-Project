@@ -19,7 +19,7 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
   console.log(mdata)
   return (
     <>
-    <CoinSearch/>
+
     <div className='rounded-div my-4 pt-4'>
     <table className='w-full text-center'>
         <thead >
