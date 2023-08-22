@@ -1,6 +1,5 @@
 import './App.css'
 import React from 'react'
-// import { ThemeProvider } from './context/Theme'
 import Navbar from './Components/Navbar'
 import { Routes, Route } from "react-router-dom"
 import Signin from './routes/Signin'
@@ -10,6 +9,7 @@ import Home from './routes/Home'
 import CoinMainPage from './Components/CoinMainPage'
 import Footer from './Components/Footer'
 import Market from './routes/Market'
+import SearchPage from './routes/SearchPage'
 
 
 
@@ -25,6 +25,8 @@ function App() {
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
         <Route path='/market' element={<Market/>}></Route>
+        <Route path='/search' element={<SearchPage/>}></Route>
+
 
         <Route>
           <Route path='/coins/:coinId' element={<CoinMainPage/>}/>

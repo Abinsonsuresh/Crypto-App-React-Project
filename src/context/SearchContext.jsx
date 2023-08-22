@@ -3,8 +3,8 @@ import axios from "axios";
 
 const SearchContext = createContext()
 
-export const MarketAPIProvider =({children})=>{
-    const [sdata, setSdata] = useState([])
+export const SearchAPIProvider =({children})=>{
+    const [sdata, setSdata] = useState({})
     const [search, setsearch] = useState('bitcoin')
 
     const url = `https://api.coingecko.com/api/v3/search?query=${search}`
@@ -20,7 +20,7 @@ export const MarketAPIProvider =({children})=>{
 
     useEffect(()=>{
         getSearchData()
-    },[url])
+    },[search])
 
 
     return(

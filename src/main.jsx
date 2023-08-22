@@ -8,6 +8,8 @@ import { TrendProvider } from './context/TrendingAPIContext.jsx'
 import { CoinAPIProvider } from  './context/CoinAPI.jsx'
 import { AuthContextProvider } from './context/AuthContext.jsx'
 import { MarketAPIProvider } from './context/MarketContext.jsx'
+import { SearchAPIProvider } from './context/SearchContext.jsx'
+
 
 
 
@@ -20,11 +22,13 @@ root.render(
   <CoinAPIProvider>
   <TrendProvider>
     <MarketAPIProvider>
+      <SearchAPIProvider>
 
     <Router>
       <App />
     </Router>
-
+    
+    </SearchAPIProvider>
     </MarketAPIProvider>
     </TrendProvider>
     </CoinAPIProvider>
