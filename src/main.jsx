@@ -5,7 +5,6 @@ import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from './context/Theme'
 import { TrendProvider } from './context/TrendingAPIContext.jsx'
-import { CoinAPIProvider } from  './context/CoinAPI.jsx'
 import { AuthContextProvider } from './context/AuthContext.jsx'
 import { MarketAPIProvider } from './context/MarketContext.jsx'
 import { SearchAPIProvider } from './context/SearchContext.jsx'
@@ -16,10 +15,10 @@ import { SearchAPIProvider } from './context/SearchContext.jsx'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-  <React.StrictMode>
+  <React.StrictMode> 
 <ThemeProvider>
 <AuthContextProvider>
-  <CoinAPIProvider>
+
   <TrendProvider>
     <MarketAPIProvider>
       <SearchAPIProvider>
@@ -31,7 +30,7 @@ root.render(
     </SearchAPIProvider>
     </MarketAPIProvider>
     </TrendProvider>
-    </CoinAPIProvider>
+
     </AuthContextProvider>
 </ThemeProvider>
   </React.StrictMode>,
