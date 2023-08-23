@@ -41,7 +41,11 @@ const SavedCoin = () => {
                     {
                         coins.map((coin)=>(
                             <div>
-                            <div className='w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 overflow-hidden' >
+                    
+                            <div className='relative w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 overflow-hidden hover:scale-105' >
+                            <div className='absolute top-0 right-2 p-2  cursor-pointer rounded-3xl '>
+                            <AiOutlineClose size={20} className='hover:text-red-500' onClick={()=>RemoveCoin(coin.id)}/>
+                                </div>
                                 <div className='flex items-center justify-center flex-col space-y-2 p-4'>
                                 <img src={coin?.image} className='w-12' alt="/" />
                                     {/* <p>{coin?.name}</p> */}
@@ -49,6 +53,7 @@ const SavedCoin = () => {
 
                                 </div>
                                 </div>
+                                
                             </div>
                         ))
                     }
@@ -93,7 +98,7 @@ const SavedCoin = () => {
     </div>
     <div className='flex items-center justify-center py-8'>
         {
-            coins.length === 0 ? (<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Search coins</Link></button>) :(<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold'><Link to='/'>Add more</Link></button>)
+            coins.length === 0 ? (<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold hover:scale-105'><Link to='/'>Search coins</Link></button>) :(<button className='border border-input px-2 py-2 rounded-lg shadow-2xl bg-button text-btnText ml-4 font-semibold hover:scale-105'><Link to='/'>Add more</Link></button>)
 
         }
         </div>

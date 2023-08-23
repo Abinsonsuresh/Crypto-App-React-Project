@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { useCoinContext } from '../context/CoinAPI'
+import React from 'react'
 import CoinItemMain from './CoinItemMain';
 import { useMarketContext } from '../context/MarketContext';
 
 
 const CoinItem = () => { 
-  // const { coins } = useCoinContext();
+
   const { mdata } = useMarketContext();
   console.log(mdata)
-  // const {search, setSearch} = useCoinContext()
+
 
 
   return (
@@ -32,7 +31,7 @@ const CoinItem = () => {
             </tr>
           </thead>
           <tbody>
-            {mdata.slice(0,20).map((CoinsFetched) =>(
+            {mdata.slice(0,10).map((CoinsFetched) =>(
         
               <CoinItemMain key={CoinsFetched.id} coin = {CoinsFetched}/>
               

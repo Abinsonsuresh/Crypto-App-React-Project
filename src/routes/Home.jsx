@@ -4,6 +4,7 @@ import Trending from '../Components/Trending'
 // import { useCoinContext } from '../context/CoinAPI'
 import { useTrendContext } from '../context/TrendingAPIContext'
 import CoinItem from '../Components/CoinItem'
+import HomePage from '../Components/HomePage'
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
 
   return (
     <>
+    <HomePage/>
     <CoinItem />
     <Trending trend = {trend}/>
     </>
