@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const HomePage = () => {
   return (
     <>
-      <div className='h-[80vh] max-w-[1380px] mx-auto w-full overflow-hidden'>
+      <div className='h-[80vh] max-w-[1380px] mx-auto w-full overflow-auto'>
         <div className='flex flex-wrap mt-[3rem] md:mt-[10rem] gap-5'>
 
           <div className='left'>

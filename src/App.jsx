@@ -10,6 +10,7 @@ import CoinMainPage from './Components/CoinMainPage'
 import Footer from './Components/Footer'
 import Market from './routes/Market'
 import SearchPage from './routes/SearchPage'
+import Exchange from './routes/Exchange'
 
 
 
@@ -26,6 +27,8 @@ function App() {
         <Route path='/account' element={<Account/>}></Route>
         <Route path='/market' element={<Market/>}></Route>
         <Route path='/search' element={<SearchPage/>}></Route>
+        <Route path='/exchange' element={<Exchange/>}></Route>
+
 
 
         <Route>

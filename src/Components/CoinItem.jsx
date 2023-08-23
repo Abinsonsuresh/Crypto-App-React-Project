@@ -34,9 +34,8 @@ const CoinItem = () => {
             {mdata.slice(0,10).map((CoinsFetched) =>(
         
               <CoinItemMain key={CoinsFetched.id} coin = {CoinsFetched}/>
-              
+             
             ))
-              // console.log(id)
     
           }
           </tbody>

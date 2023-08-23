@@ -39,6 +39,8 @@ const Navbar = () => {
 
           {user?.email ? (<div className='hidden md:block'>
           <Link className='p-4' to='/market'>Market</Link>
+          <Link className='p-4' to='/exchange'>Exchanges</Link>
+
             <Link className='p-4' to='/account'>Account</Link>
             <button onClick={handlesignOut}>Sign out</button>
           </div>) : (<div className='hidden md:block'>
@@ -68,9 +70,11 @@ const Navbar = () => {
           <ul className='w-full p-4 my-8'>
             <li className='border-b py-6'> <ThemeToggleBtn /></li>
 
-            <li className='border-b py-6'> <Link to='/market'>Market</Link> </li>
-
             <li className='border-b py-6'><Link onClick={shownav} to='/'>Home</Link></li>
+            <li className='border-b py-6'> <Link onClick={shownav}  to='/market'>Market</Link> </li>
+            <li className='border-b py-6'> <Link  onClick={shownav} to='/exchange'>Exchange</Link> </li>
+
+
             {user?.email ? (<ul>
               <li className='border-b py-6'><Link onClick={shownav} to='/account'>Account</Link></li>
               <button className='w-full my-2 p-3 bg-button text-btnText border-white rounded-2xl shadow-xl' onClick={handlesignOut}>Sign out</button>

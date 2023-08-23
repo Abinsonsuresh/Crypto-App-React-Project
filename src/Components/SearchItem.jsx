@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SearchItem = ({coin}) => {
     const { market_cap_rank, id, name, symbol} = coin
-    const [savedCoin, setSavedCoin] = useState(false);
-    const setsave = () => { setSavedCoin(true) }
+
   return (
     <tr key={coin?.id} className='h-[80px] w-full  overflow-hidden '>
 

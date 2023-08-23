@@ -8,6 +8,8 @@ import { TrendProvider } from './context/TrendingAPIContext.jsx'
 import { AuthContextProvider } from './context/AuthContext.jsx'
 import { MarketAPIProvider } from './context/MarketContext.jsx'
 import { SearchAPIProvider } from './context/SearchContext.jsx'
+import { ExchangeProvider } from './context/ExchangeContext.jsx'
+
 
 
 
@@ -18,15 +20,16 @@ root.render(
   <React.StrictMode> 
 <ThemeProvider>
 <AuthContextProvider>
-
   <TrendProvider>
     <MarketAPIProvider>
       <SearchAPIProvider>
+    <ExchangeProvider>
 
     <Router>
       <App />
     </Router>
-    
+
+    </ExchangeProvider>
     </SearchAPIProvider>
     </MarketAPIProvider>
     </TrendProvider>
