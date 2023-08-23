@@ -1,9 +1,10 @@
 import React from 'react'
 import { useMarketContext } from '../context/MarketContext'
 import ExchangeItem from '../Components/ExchangeItem'
+import { useExchangeContext } from '../context/ExchangeContext'
 
 const Exchange = () => {
-    const {mdata} = useMarketContext()
+    const {exdata} = useExchangeContext()
   return (
     <>
     <div className=' flex items-center justify-center'>
@@ -13,14 +14,16 @@ const Exchange = () => {
       <table className='w-full border-collapse text-center '>
         <thead>
           <tr>
-            <th></th>
-
+            <th>#</th>
             <th className='text-left'>Name</th>
+            <th>Trust Score</th>
+            <th className='hidden md:sm:table-cell'>Trade Vol 24h</th>
+
             </tr>
         
         </thead>
         <tbody>
-          {mdata.map((ExFetched) =>(
+          {exdata.map((ExFetched) =>(
       
             <ExchangeItem key={ExFetched.id} exdata = {ExFetched}/>
            
