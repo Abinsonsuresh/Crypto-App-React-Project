@@ -9,7 +9,7 @@ import gify from '../assets/giphy.gif'
 const HomePage = () => {
   return (
     <>
-      <div className='relative h-[80vh] mx-auto w-full'>
+      <div className='relative h-[80vh] max-w-[1380px] mx-auto w-full'>
       {/* <iframe  className='object-cover h-full w-full' src={gify} ></iframe> */}
 
         <div className='absolute top-32 '>
