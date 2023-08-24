@@ -16,24 +16,22 @@ const Footer = () => {
       <div className='flex justify-center'>       
               <div className='text-left'>
           <div className='w-full flex justify-start'>
-            <div className='w-full md:w-[300px] py-4 relative ml-5'>
+            <div className='w-full md:w-[400px] py-4 relative ml-5'>
               <div className='flex justify-center md:justify-start py-4 md:py-0 md:pb-4 mt-[-1rem]'>
                 <ThemeToggleBtn />
               </div>
-              <p className='text-center md:text-left'>Join us and get more features</p>
+              <p className='text-center md:text-left'>Subscribe to our news letter</p>
               <div className='py-4'>
                 <form>
                   <input className='bg-primary border border-input p-2 mr-2 w-full shadow-xl rounded-2xl md:w-auto' type='email' placeholder='Enter your email' />
-                  <button className='bg-button text-btnText px-4 p-2 w-full rounded-2xl shadow-xl hover:shadow-2xl md:w-auto my-2'><Link to='/signup'>Sign up</Link></button>
+                  <button className='bg-button text-btnText px-4 p-2 w-full rounded-2xl shadow-xl hover:shadow-2xl md:w-auto my-2'><Link to='/signup'>Subscribe</Link></button>
                 </form>
               </div>
               <div className='flex py-4 justify-between text-accent'>
               <a href="https://www.linkedin.com/in/abinsonsuresh/" target="_blank"><FaLinkedin size={25}/></a>
               <a href="https://www.instagram.com/abinsonsuresh/" target="_blank">  <AiOutlineInstagram size={25} /></a>
               <a href="https://twitter.com/abinsonsuresh/" target="_blank">  <FaTwitter size={25} /></a>
-                <a href="https://github.com/Abinsonsuresh/" target="_blank"> <FaGithub size={25}/></a>
-               
-               
+                <a href="https://github.com/Abinsonsuresh/" target="_blank"> <FaGithub size={25}/></a>        
               </div>
             </div>
           </div>

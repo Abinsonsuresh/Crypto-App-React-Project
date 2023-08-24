@@ -32,9 +32,12 @@ const Navbar = () => {
           <h1 className='text-2xl'>CryptoTrix</h1>
         </Link>
         <div className='hidden md:block'>
-          <ThemeToggleBtn />
         </div>
         <div className='flex items-center justify-end'>
+          <div className='hidden md:block'>
+
+        <ThemeToggleBtn />
+          </div>
         <Link  to='/search' className='p-4 hidden md:block'><MdOutlineSearch size={25}/></Link>
 
           {user?.email ? (<div className='hidden md:block'>
@@ -56,21 +59,24 @@ const Navbar = () => {
 
         {/* MENU BAR */}
         <div className='flex items-center md:hidden'>
+          <div className='mr-12'>
+
+        <ThemeToggleBtn />
+          </div>
         <div>
-        <Link to='/search' className='p-4 mr-2 lg:hidden'><MdOutlineSearch size={25}/></Link>
+        <Link to='/search' className='p-4 mr-3 lg:hidden'><MdOutlineSearch size={25}/></Link>
         </div>
         <div onClick={shownav} className='md:hidden cursor-pointer z-10'>
           {nav ? null : <AiOutlineMenu size={25} />}
         </div>
         </div>
         {/* MENU BAR CONTENTS */}
-        <div className={nav ? 'md:hidden fixed right-0  top-0 flex flex-col items-center justify-start w-[70%] h-[100%] bg-primary ease-in duration-300 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
+        <div className={nav ? 'md:hidden fixed right-0  top-0 flex flex-col items-center justify-start w-[70%] h-[100%] bg-primary ease-in duration-100 z-10' : 'fixed right-[-100%]  h-[70%] flex flex-col items-center justify-between ease-in'}>
           <div onClick={shownav} className='md:hidden cursor-pointer z-10 fixed right-5 top-11'>
             {nav ? <AiOutlineClose size={25} /> : null}
           </div>
           <ul className='w-full p-4 my-8'>
-            <li className='border-b py-6'> <ThemeToggleBtn /></li>
-
+            {/* <li className='border-b py-6'> <ThemeToggleBtn /></li> */}
             <li className='border-b py-6'><Link onClick={shownav} to='/'>Home</Link></li>
             <li className='border-b py-6'> <Link onClick={shownav}  to='/market'>Market</Link> </li>
             <li className='border-b py-6'> <Link  onClick={shownav} to='/exchange'>Exchange</Link> </li>
