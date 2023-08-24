@@ -1,5 +1,6 @@
 import React from 'react'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { Link } from 'react-router-dom';
 
 
 const MarketItem = ({data, currency}) => {

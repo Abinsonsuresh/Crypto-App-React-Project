@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useMarketContext } from '../context/MarketContext';
 import MarketItem from '../Components/MarketItem';
 import FilterCurrency from '../Components/FilterCurrency'
-import {MdFilterList} from 'react-icons/md'
 // import Pagination from '../Components/Pagination';
 
 
@@ -48,8 +47,8 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
     </table>
 
     <div className='p-8 flex justify-between'>
-    <button onClick={()=>{setCurrentpage(currentpage - 1)}}  className=' px-4 py-2  border border-secondary  shadow-lg'>Prev</button> 
-    <button onClick={()=>{setCurrentpage(currentpage + 1)}} className=' px-4 py-2  border border-secondary shadow-lg'>Next</button>   
+    <button onClick={()=>{setCurrentpage(currentpage - 1)}} disabled={currentpage <= firstpost}  className=' px-4 py-2  border border-secondary  shadow-lg'>Prev</button> 
+    <button onClick={()=>{setCurrentpage(currentpage + 1)}} disabled={currentpage >= lastpost/postperpage} className=' px-4 py-2  border border-secondary shadow-lg'>Next</button>   
 
     </div>
 
