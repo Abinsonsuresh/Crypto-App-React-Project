@@ -36,6 +36,11 @@ function App() {
         </Route>
 
         <Route>
+          <Route path='/market/:coinId' element={<CoinMainPage/>}/>
+          <Route path=':coinId' />
+        </Route>
+
+        <Route>
           <Route path='/exchange/:EId' element={<ExchangeMainData/>}/>
           <Route path=':EId' />
         </Route>

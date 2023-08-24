@@ -21,13 +21,14 @@ const MarketItem = ({data, currency}) => {
                 <td></td>
                 <td>{market_cap_rank}</td>
                 <td>
-                    <Link to={`/coins/${id}`}></Link>
+                    <Link to={`/market/${id}`}>
                     <div className='flex items-center'>
                         <img src={image} className='w-6 mr-2' alt="" />
                         <p className='hidden sm:table-cell'>{name}</p>
                     </div>
+                    </Link>
                 </td>
-                <td>{symbol.toUpperCase()}</td>
+                <td> <Link to={`/market/${id}`}>{symbol.toUpperCase()}</Link></td>
                 <td>{currency === 'inr' ? (<p>₹{current_price.toLocaleString()}</p>) : (<p>${current_price.toLocaleString()}</p>)}</td>
                 <td>{price_change_percentage_24h > 0 ? (<p className='text-green-500'>{price_change_percentage_24h.toFixed(2)}%</p>) : (<p className='text-red-500'>{price_change_percentage_24h.toFixed(2)}%</p>)}</td>
                 <td className='w-[180px] hidden md:table-cell'>{ currency === 'inr'? (<p>₹{total_volume.toLocaleString()}</p>) : (<p>${total_volume.toLocaleString()}</p>)}</td>
