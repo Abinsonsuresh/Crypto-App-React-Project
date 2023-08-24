@@ -9,7 +9,9 @@ CryptoTrix is a Crypto tracking app made using React.js. The web app contains al
 
 React.js and Tailwind CSS are used for the front end and Firebase/ Firestore for authentication and database 
 
-📍Tech stack used: React js, Tailwind CSS, Firebase / Firestore, Coin Gecko APICryptoTrix is a Crypto tracking app made using React.js. The web app contains all data related to cryptocurrency and exchanges. User account feature enables watchlist coins and tracking them 📍 Features: Top coins and Trending Coins data, Search coin feature, sign in and sign out, Account and wishlist option, Light mode and Dark mode. React.js and Tailwind CSS are used for the front end and Firebase/ Firestore for authentication and database 📍Tech stack used: React js, Tailwind CSS, Firebase / Firestore, Coin Gecko API
+📍Tech stack used: React js, Tailwind CSS, Firebase / Firestore, Coin Gecko APICryptoTrix is a Crypto tracking app made using React.js. The web app contains all data related to cryptocurrency and exchanges. User account feature enables watchlist coins and tracking them 
+📍 Features: Top coins and Trending Coins data, Search coin feature, sign in and sign out, Account and wishlist option, Light and Dark modes. React.js and Tailwind CSS are used for the front end and Firebase/ Firestore for authentication and database 
+📍Tech stack used: React js, Tailwind CSS, Firebase / Firestore, Coin Gecko API
 Skills: React.js · React Hooks · JavaScript · Tailwind CSS · Firebase · Cloud Firestore · Cascading Style Sheets (CSS)
 
 Techstack used: React js, Tailwind CSS, Firebase / Firestore, Coingecko API
