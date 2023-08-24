@@ -11,6 +11,7 @@ const MarketItem = ({data, currency}) => {
                 <td></td>
                 <td>{market_cap_rank}</td>
                 <td>
+                    <Link to={`/coins/${id}`}></Link>
                     <div className='flex items-center'>
                         <img src={image} className='w-6 mr-2' alt="" />
                         <p className='hidden sm:table-cell'>{name}</p>
