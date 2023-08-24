@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import CoinSearch from '../Components/CoinSearch';
 import { useMarketContext } from '../context/MarketContext';
 import MarketItem from '../Components/MarketItem';
-import Pagination from '../Components/Pagination';
+import FilterCurrency from '../Components/FilterCurrency'
+import {MdFilterList} from 'react-icons/md'
+// import Pagination from '../Components/Pagination';
 
 
 
 
 const Market = () => {
-  const { mdata } = useMarketContext();
+  const { mdata, currency, setCurrency } = useMarketContext();
+
 const [currentpage , setCurrentpage] = useState(1)
 const [postperpage , setPostperpage] = useState(10)
+
 
 const lastpost = currentpage * postperpage;  //if cp = 2 pp= 10 then cp * pp ->lp = 20
 const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp -> fp = 20 -10 = 10
@@ -18,8 +21,8 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
 
   console.log(mdata)
   return (
-    <>
-
+    <> 
+    <FilterCurrency/>
     <div className='rounded-div my-4 pt-4'>
     <table className='w-full text-center'>
         <thead >
@@ -38,7 +41,7 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
         <tbody>
            {
             mdata.slice(firstpost, lastpost ).map((mvalue)=>(
-              <MarketItem data={mvalue} key = {mvalue.id}/>
+              <MarketItem data={mvalue} currency = {currency} key = {mvalue.id}/>
             ))
            }
         </tbody>

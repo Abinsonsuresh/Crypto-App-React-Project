@@ -24,7 +24,7 @@ export const MarketAPIProvider =({children})=>{
 
 
     return(
-        <MarketContext.Provider value={{mdata}}>{children}</MarketContext.Provider>
+        <MarketContext.Provider value={{mdata, currency, setCurrency}}>{children}</MarketContext.Provider>
     )
 
 }

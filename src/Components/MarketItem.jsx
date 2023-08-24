@@ -1,8 +1,9 @@
 import React from 'react'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 
-const MarketItem = ({data}) => {
-    // console.log(data)
+
+const MarketItem = ({data, currency}) => {
+
     const { market_cap_rank, id, name, image, current_price, symbol, price_change_24h, total_volume, market_cap, price_change_percentage_24h, sparkline_in_7d } = data
     return (
         <>
@@ -26,7 +27,7 @@ const MarketItem = ({data}) => {
             </Sparklines>
           </td>
 
-            </tr>
+            </tr> 
         </>
     )
 }
