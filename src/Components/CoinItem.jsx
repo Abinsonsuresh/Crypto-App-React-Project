@@ -5,8 +5,8 @@ import { useMarketContext } from '../context/MarketContext';
 
 const CoinItem = () => { 
 
-  const { mdata } = useMarketContext();
-  console.log(mdata)
+  const { mdata, currency } = useMarketContext();
+  // console.log(mdata)
 
 
 
@@ -33,7 +33,7 @@ const CoinItem = () => {
           <tbody>
             {mdata.slice(0,10).map((CoinsFetched) =>(
         
-              <CoinItemMain key={CoinsFetched.id} coin = {CoinsFetched}/>
+              <CoinItemMain key={CoinsFetched.id} currency={currency} coin = {CoinsFetched}/>
              
             ))
     

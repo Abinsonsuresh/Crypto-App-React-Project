@@ -53,6 +53,7 @@ const CoinMainPage = () => {
           image: coin.image,
           rank: coin.market_cap_rank,
           symbol: coin.symbol,
+          price: coin.current_price.toLocaleString(),  
       
         }),
       });

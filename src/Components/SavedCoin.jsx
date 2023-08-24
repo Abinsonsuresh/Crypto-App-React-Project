@@ -4,8 +4,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import {doc, onSnapshot, updateDoc} from 'firebase/firestore'
 import {db} from '../firebase'
 import { userAuth } from '../context/AuthContext'
+import { useMarketContext } from '../context/MarketContext'
 
 const SavedCoin = () => {
+    const {currency } = useMarketContext()
 
     const [coins, setCoins] = useState([]);
     const { user } = userAuth();
@@ -40,7 +42,7 @@ const SavedCoin = () => {
                 <div className='flex flex-wrap gap-5 items-center justify-center '>
                     {
                         coins.map((coin)=>(
-                            <div>
+                            <div key={coin.id}>
                     
                             <div className='relative w-40 h-40 border border-secondary rounded-2xl shadow-xl bg-primary flex justify-center p-4 overflow-hidden hover:scale-105' >
                             <div className='absolute top-0 right-2 p-2  cursor-pointer rounded-3xl '>
@@ -50,6 +52,8 @@ const SavedCoin = () => {
                                 <img src={coin?.image} className='w-12' alt="/" />
                                     {/* <p>{coin?.name}</p> */}
                                     <p className='font-semibold'>{coin?.symbol.toUpperCase()}</p>
+                                    <div className='font-semibold'>{currency === 'inr' ? (<p>₹{coin?.price}</p>) : (<p>${coin?.price}</p>)}</div>
+
 
                                 </div>
                                 </div>

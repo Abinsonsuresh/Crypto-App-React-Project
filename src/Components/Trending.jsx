@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 
 const Trending = ({trend}) => {
 
-    console.log("ter")
-    console.log(trend)
+    // console.log("ter")
+    // console.log(trend)
     // console.log(trend.id)
 
   return (

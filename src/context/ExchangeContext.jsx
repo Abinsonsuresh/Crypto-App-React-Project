@@ -12,7 +12,7 @@ export const ExchangeProvider =({children})=>{
     const getexchangeData=()=>{
         axios.get(url).then((response)=>{
             setExdata(response.data)
-            console.log(response.data)
+            // console.log(response.data)
         })
     }
 

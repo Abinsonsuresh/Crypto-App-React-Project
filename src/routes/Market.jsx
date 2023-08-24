@@ -8,7 +8,7 @@ import FilterCurrency from '../Components/FilterCurrency'
 
 
 const Market = () => {
-  const { mdata, currency, setCurrency } = useMarketContext();
+  const { mdata, currency} = useMarketContext();
 
 const [currentpage , setCurrentpage] = useState(1)
 const [postperpage , setPostperpage] = useState(10)
@@ -18,7 +18,7 @@ const lastpost = currentpage * postperpage;  //if cp = 2 pp= 10 then cp * pp ->l
 const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp -> fp = 20 -10 = 10
 
 
-  console.log(mdata)
+  // console.log(mdata)
   return (
     <> 
     <FilterCurrency/>
@@ -47,8 +47,8 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
     </table>
 
     <div className='p-8 flex justify-between'>
-    <button onClick={()=>{setCurrentpage(currentpage - 1)}} disabled={currentpage <= firstpost}  className=' px-4 py-2  border border-secondary  shadow-lg'>Prev</button> 
-    <button onClick={()=>{setCurrentpage(currentpage + 1)}} disabled={currentpage >= lastpost/postperpage} className=' px-4 py-2  border border-secondary shadow-lg'>Next</button>   
+    <button onClick={()=>{setCurrentpage(currentpage - 1)}}  className=' px-4 py-2  border border-secondary  shadow-lg'>Prev</button> 
+    <button onClick={()=>{setCurrentpage(currentpage + 1)}}  className=' px-4 py-2  border border-secondary shadow-lg'>Next</button>   
 
     </div>
 

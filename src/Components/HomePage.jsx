@@ -14,7 +14,7 @@ const HomePage = () => {
         <div className='flex flex-wrap mt-[3rem] md:mt-[10rem] gap-5'>
 
           <div className='left'>
-            <h2 className='text-5xl md:text-7xl font-bold'>Enter to the world </h2>
+            <h2 className='text-5xl md:text-7xl font-bold'>Enter the world </h2>
             <h2 className='text-5xl md:text-7xl font-bold'> of Cryptoverse</h2>
 
             <h2 className='text-2xl font-bold my-8 flex items-center'>To the Moon <span className='ml-2'><img src={img} className='w-6' alt="" /></span></h2>
