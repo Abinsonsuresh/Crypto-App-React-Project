@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMarketContext } from '../context/MarketContext'
+
 import ExchangeItem from '../Components/ExchangeItem'
 import { useExchangeContext } from '../context/ExchangeContext'
 

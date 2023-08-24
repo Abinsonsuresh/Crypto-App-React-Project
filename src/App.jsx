@@ -11,6 +11,7 @@ import Footer from './Components/Footer'
 import Market from './routes/Market'
 import SearchPage from './routes/SearchPage'
 import Exchange from './routes/Exchange'
+import ExchangeMainData from './Components/ExchangeMainData'
 
 
 
@@ -29,17 +30,18 @@ function App() {
         <Route path='/search' element={<SearchPage/>}></Route>
         <Route path='/exchange' element={<Exchange/>}></Route>
 
-
-
         <Route>
           <Route path='/coins/:coinId' element={<CoinMainPage/>}/>
           <Route path=':coinId' />
         </Route>
+
+        <Route>
+          <Route path='/exchange/:EId' element={<ExchangeMainData/>}/>
+          <Route path=':EId' />
+        </Route>
       {/* <Route path='/coins/:coinID' element={<CoinMainPage/>}/> */}
       </Routes>
       <Footer/>
-      {/* <Signin/> */}
-
     </div>
 
 
