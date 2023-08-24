@@ -5,7 +5,9 @@ const ExchangeContext = createContext()
 
 export const ExchangeProvider =({children})=>{
     const[exdata, setExdata ] = useState([])
-    const url = 'https://api.coingecko.com/api/v3/exchanges?per_page=10'
+
+
+    const url = 'https://api.coingecko.com/api/v3/exchanges?per_page=1000'
 
     const getexchangeData=()=>{
         axios.get(url).then((response)=>{

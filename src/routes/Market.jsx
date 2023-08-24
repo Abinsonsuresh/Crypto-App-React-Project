@@ -44,7 +44,13 @@ const firstpost = lastpost - postperpage;  // if lp = 20 pp= 10 then  lp = pp ->
         </tbody>
     </table>
 
-    <Pagination setCurrentpage={setCurrentpage} currentpage= {currentpage} totalpost = {mdata.length} postperpage= {postperpage} />
+    <div className='p-8 flex justify-between'>
+    <button onClick={()=>{setCurrentpage(currentpage - 1)}}  className=' px-4 py-2  border border-secondary  shadow-lg'>Prev</button> 
+    <button onClick={()=>{setCurrentpage(currentpage + 1)}} className=' px-4 py-2  border border-secondary shadow-lg'>Next</button>   
+
+    </div>
+
+    {/* <Pagination setCurrentpage={setCurrentpage} currentpage= {currentpage} totalpost = {mdata.length} postperpage= {postperpage} /> */}
 
 
     </div>
