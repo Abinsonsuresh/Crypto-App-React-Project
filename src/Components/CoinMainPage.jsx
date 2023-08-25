@@ -10,9 +10,6 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 
-import {db} from '../firebase'
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import { userAuth } from '../context/AuthContext';
 
 
 
@@ -38,29 +35,6 @@ const CoinMainPage = () => {
   const {image, name} = coin
 
   const [savedCoin, setSavedCoin] = useState(false);
-  const { user } = userAuth();
-  // const setsave =()=>{setSavedCoin(true)}
-
-  const coinPath = doc(db, 'users', `${user?.email}`);
-  const saveCoin = async () => {
-    if (user?.email) {
-      setSavedCoin(true);
-      await updateDoc(coinPath, {
-     
-        watchList: arrayUnion({
-          id: coin.id,
-          name: coin.name,
-          image: coin.image,
-          rank: coin.market_cap_rank,
-          symbol: coin.symbol,
-          price: coin.current_price.toLocaleString(),  
-      
-        }),
-      });
-    } else {
-      alert('Please sign in to save a coin to your watch list');
-    }
-  };
 
 
   return (
@@ -79,7 +53,7 @@ const CoinMainPage = () => {
             {coin.market_data?.current_price ? (<p className='text-2xl font-bold'>₹{coin.market_data?.current_price.inr.toLocaleString()}</p>) : null}
             <div className='flex items-center text-center'>
             <p className='mr-4'>7 Day</p>
-            <div onClick={saveCoin}>{savedCoin ? <AiFillStar size={25}/> : <AiOutlineStar size={25} />}</div>
+      
             </div>
           </div>
 

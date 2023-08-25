@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import SavedCoin from '../Components/SavedCoin'
+// import SavedCoin from '../Components/SavedCoin'
 import { userAuth } from '../context/AuthContext'
 import { Navigate, useNavigate } from 'react-router-dom';
 
@@ -34,7 +34,7 @@ if(user)
       <div className='flex justify-between items-center my-12 py-8 rounded-div'>
         <div className='w-full min-h-[300px]'>
           <h1 className='py-4 font-bold text-2xl text-center'>Watchlist</h1>
-          <SavedCoin/>
+          {/* <SavedCoin/> */}
         </div>
       </div>
     </div>
