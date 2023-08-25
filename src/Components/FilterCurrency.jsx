@@ -9,7 +9,7 @@ const filter = () => {
     const showFil =()=>{
         setShowFilter(!showFilter)
     }
-    console.log(currency)
+
     return (
         <>
             <div onClick={showFil} className='mx-auto max-w-[1380px] cursor-pointer flex justify-end my-3'>

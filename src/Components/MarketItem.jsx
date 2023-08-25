@@ -29,10 +29,10 @@ const MarketItem = ({data, currency}) => {
                     </Link>
                 </td>
                 <td> <Link to={`/market/${id}`}>{symbol.toUpperCase()}</Link></td>
-                <td>{currency === 'inr' ? (<p>₹{current_price.toLocaleString()}</p>) : (<p>${current_price.toLocaleString()}</p>)}</td>
-                <td>{price_change_percentage_24h > 0 ? (<p className='text-green-500'>{price_change_percentage_24h.toFixed(2)}%</p>) : (<p className='text-red-500'>{price_change_percentage_24h.toFixed(2)}%</p>)}</td>
-                <td className='w-[180px] hidden md:table-cell'>{ currency === 'inr'? (<p>₹{total_volume.toLocaleString()}</p>) : (<p>${total_volume.toLocaleString()}</p>)}</td>
-          <td className='w-[180px] hidden md:table-cell'>{ currency === 'inr'  ? (<p>₹{market_cap.toLocaleString()}</p>) : (<p>${market_cap.toLocaleString()}</p>)}</td>
+                <td>{currency === 'inr' ? (<p>₹{current_price?.toLocaleString()}</p>) : (<p>${current_price?.toLocaleString()}</p>)}</td>
+                <td>{data?.price_change_percentage_24h > 0 ? (<p className='text-green-500'>{data?.price_change_percentage_24h?.toFixed(2)}%</p>) : (<p className='text-red-500'>{data?.price_change_percentage_24h?.toFixed(2)}%</p>)}</td>
+                <td className='w-[180px] hidden md:table-cell'>{ currency === 'inr'? (<p>₹{total_volume?.toLocaleString()}</p>) : (<p>${total_volume?.toLocaleString()}</p>)}</td>
+          <td className='w-[180px] hidden md:table-cell'>{ currency === 'inr'  ? (<p>₹{market_cap?.toLocaleString()}</p>) : (<p>${market_cap?.toLocaleString()}</p>)}</td>
           <td>
             <Sparklines data={sparkline_in_7d.price}>
               <SparklinesLine color="teal" />
